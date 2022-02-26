@@ -19,12 +19,8 @@ public class Service {
 
     public CurrencyExchangeQuotation getLastFiveDaysCurrencyRates(String currencyCode) {
 
-        //TODO check only working days
         LocalDate start = LocalDate.now().minusDays(5);
         LocalDate end = LocalDate.now();
-
-        System.out.println(end.getDayOfWeek());
-
 
         String url = String.format("http://api.nbp.pl/api/exchangerates/rates/a/%s/%s/%s/?format=json)", currencyCode, start, end);
 
